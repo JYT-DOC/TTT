@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>我不是吴彦祖</title>
+<title>甲鱼汤的笔记本</title>
 <style>
   :root {
     --bg: #f6f6f4;
@@ -114,7 +114,7 @@
 <body>
   <div class="wrap">
     <header>
-      <h1>甲鱼汤的专属笔记</h1>
+      <h1>甲鱼汤的笔记本</h1>
     </header>
 
     <section class="editor">
@@ -160,7 +160,7 @@
       : notes;
 
     if (!visible.length) {
-      grid.innerHTML = `<div class="empty">${q ? '没有匹配的笔记' : '还没有笔记，写下第一条吧'}</div>`;
+      grid.innerHTML = `<div class="empty">${q ? '没有匹配的笔记' : '还没有写过笔记哦'}</div>`;
       return;
     }
 
@@ -201,7 +201,7 @@
   grid.addEventListener('click', e => {
     if (!e.target.classList.contains('del')) return;
     const card = e.target.closest('article[data-id]');
-    if (!confirm('删除这条笔记？')) return;
+    if (!confirm('要删除这条笔记吗？')) return;
     notes = notes.filter(n => n.id !== card.dataset.id);
     save();
     render();
